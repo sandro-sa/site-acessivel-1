@@ -1,12 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        input {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Cadstro acessivel</h1>
-    <h2>Subtitle</h2>
+    <h1>Cadastro acessivel</h1>
+    <form>
+        <fieldset>
+            <legend>Dados pessoais</legend>
+
+            <label for="nome">Informe seu primeiro nome:</label>
+            <input type="text" name="nome" id="nome">
+            <label for="sobrenome">Informe seu Sobrenome:</label>
+            <input type="text" name="sobrenome">
+            <fieldset>
+                <legend>Selecione seu sexo</legend>
+                <input type="radio" name="sexo" id="sexo" value="0">
+                <label for="sexo">Feminino</label>
+                <input type="radio" name="sexo" id="sexo" value="1">
+                <label for="sexo">Masculino</label>
+            </fieldset>
+        </fieldset>
+        <fieldset>
+            <legend>Dados para contado</legend>
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email">
+            <label for="phone">Telefone</label>
+            <input type="text" name="phone" id="phone">
+        </fieldset>
+        <fieldset>
+            <legend>Dados do endereço</legend>
+            <label for="cep">CEP</label>
+            <input type="text" name="cep" id="cep">
+        </fieldset>
+        <button type="submit" aria-details="Enviar para cadastro em ...">Cadastrar</button>
+    </form>
 </body>
+
 </html>
