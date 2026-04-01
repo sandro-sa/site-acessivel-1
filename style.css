@@ -1,0 +1,399 @@
+ :root {
+      --bg: #ffffff;
+      --text: #1f2937;
+      --muted: #4b5563;
+      --border: #d1d5db;
+      --focus: #1d4ed8;
+      --surface: #f9fafb;
+      --error: #b91c1c;
+      --success: #065f46;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 16px;
+      background: #000;
+      color: #fff;
+      padding: 8px 12px;
+      text-decoration: none;
+      border-radius: 4px;
+      z-index: 1000;
+    }
+
+    .skip-link:focus {
+      top: 16px;
+    }
+.menu {
+  background: #111827;
+  color: #fff;
+}
+
+.menu-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.logo {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.menu-toggle {
+  background: #1f2937;
+  color: #fff;
+  border: 1px solid #374151;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.menu-lista {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-lista a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu-lista a:hover,
+.menu-lista a:focus {
+  text-decoration: underline;
+}
+
+/* foco visível */
+.menu a:focus,
+.menu button:focus {
+  outline: 3px solid #60a5fa;
+  outline-offset: 2px;
+}
+
+/* responsivo */
+@media (max-width: 640px) {
+  .menu-lista {
+    display: none;
+    flex-direction: column;
+    margin-top: 12px;
+  }
+
+  .menu-lista.ativo {
+    display: flex;
+  }
+}
+    
+    h1, h2 {
+      line-height: 1.25;
+    }
+
+    section {
+      margin-bottom: 48px;
+      padding: 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    form {
+      margin-top: 16px;
+    }
+
+    fieldset {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 20px;
+      background: #fff;
+    }
+
+    legend {
+      font-weight: 700;
+      padding: 0 8px;
+    }
+
+    .field {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: inline-block;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+      font: inherit;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--text);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .hint {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .required {
+      font-weight: 700;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    button {
+      border: 1px solid var(--border);
+      background: #fff;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button[type="submit"] {
+      border-color: var(--success);
+    }
+
+    button:hover,
+    input:hover,
+    select:hover,
+    textarea:hover {
+      border-color: #9ca3af;
+    }
+
+    a:focus,
+    button:focus,
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    .radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.radio-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 180px;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.radio-card:hover {
+  border-color: #9ca3af;
+  background: #f9fafb;
+}
+
+.radio-card input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.radio-ui {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #6b7280;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.radio-ui::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: #1d4ed8;
+  transform: scale(0);
+  transition: transform 0.2s ease;
+}
+
+.radio-card input[type="radio"]:checked + .radio-ui {
+  border-color: #1d4ed8;
+}
+
+.radio-card input[type="radio"]:checked + .radio-ui::after {
+  transform: scale(1);
+}
+
+.radio-card:has(input[type="radio"]:checked) {
+  border-color: #1d4ed8;
+  background: #eff6ff;
+}
+
+.radio-card:has(input[type="radio"]:focus-visible) {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.radio-text {
+  font-weight: 600;
+}
+
+    .checkbox-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      width: auto;
+      margin-top: 4px;
+    }
+
+    .error {
+      margin-top: 6px;
+      color: var(--error);
+      font-weight: 600;
+      min-height: 1.2em;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      margin-top: 16px;
+    }
+
+    caption {
+      text-align: left;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--border);
+      padding: 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    thead th {
+      background: #eef2ff;
+    }
+
+    tbody th {
+      background: #f8fafc;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 16px;
+      }
+
+      section {
+        padding: 16px;
+      }
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* botão escondido no desktop */
+.menu-toggle {
+  display: none;
+}
+
+/* menu normal no desktop */
+.menu-lista {
+  display: flex;
+}
+
+/* mobile */
+@media (max-width: 640px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-lista {
+    display: none;
+    flex-direction: column;
+    margin-top: 12px;
+  }
+
+  .menu-lista.ativo {
+    display: flex;
+  }
+}
