@@ -1,0 +1,62 @@
+ <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exemplos Acessíveis: Formulário e Tabela</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <main id="conteudo-principal" class="container">
+    <h1>Exemplos de tabela acessível</h1>
+    <p>
+      Esta página apresenta uma tabela construídos com foco em semântica,
+      clareza estrutural, navegação por teclado e leitura adequada por tecnologias assistivas.
+    </p>
+ <section aria-labelledby="titulo-tabela">
+      <h2 id="titulo-tabela">Tabela de preços acessível</h2>
+      <p>
+        O exemplo abaixo usa título de tabela, cabeçalhos estruturais e organização simples,
+        para que os dados mantenham o contexto durante a leitura.
+      </p>
+
+      <table>
+        <caption>
+          Preços dos pratos do restaurante, com valores para porção individual e porção dupla.
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Nome do prato</th>
+            <th scope="col">Valor individual</th>
+            <th scope="col">Valor duplo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Yakisoba</th>
+            <td>R$ 11,00</td>
+            <td>R$ 20,00</td>
+          </tr>
+          <tr>
+            <th scope="row">Yakimeshi</th>
+            <td>R$ 10,00</td>
+            <td>R$ 18,00</td>
+          </tr>
+          <tr>
+            <th scope="row">Yaki bifum</th>
+            <td>R$ 18,00</td>
+            <td>R$ 35,00</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="hint">
+        Esta tabela é usada para dados, não para layout. Os cabeçalhos ajudam o leitor de tela
+        a relacionar cada valor ao contexto correto. :contentReference[oaicite:2]{index=2}
+      </p>
+    </section>
+  </main>
+</body>
+</html>
