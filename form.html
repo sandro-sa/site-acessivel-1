@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exemplo de Tabela Acessecivel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <nav aria-label="Menu principal" class="menu">
+    <div class="menu-container">
+      <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+      <a href="index.html" class="logo">Minha Aplicação</a>
+
+
+      <ul id="menu-lista" class="menu-lista">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="form.html">Formulário</a></li>
+        <li><a href="tabela.html">Tabela</a></li>
+      </ul>
+        <button
+        class="menu-toggle"
+        aria-expanded="false"
+        aria-controls="menu-lista"
+      >
+        Menu
+      </button>
+    </div>
+  </nav>
+</header>
+
+  <main id="conteudo-principal" class="container">
+    <h1>Exemplos de acessibilidade: formulários</h1>
+    <p>
+      Esta página apresenta um formulário construída com foco em semântica,
+      clareza estrutural, navegação por teclado e leitura adequada por tecnologias assistivas.
+    </p>
+
+    <section aria-labelledby="titulo-formulario">
+      <h2 id="titulo-formulario">Formulário de contato acessível</h2>
+      <p id="instrucoes-formulario">
+        Preencha os campos abaixo. Os campos marcados como
+        <span class="required">obrigatórios</span> devem ser informados.
+      </p>
+
+      <form action="/enviar" method="post" aria-describedby="instrucoes-formulario" novalidate>
+        <fieldset>
+          <legend>Dados pessoais</legend>
+
+          <div class="field">
+            <label for="nome">Nome completo <span class="required">(obrigatório)</span></label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              autocomplete="name"
+              required
+              aria-describedby="ajuda-nome erro-nome"
+            />
+            <small id="ajuda-nome" class="hint">Digite seu nome e sobrenome.</small>
+            <div id="erro-nome" class="error" aria-live="polite"></div>
+          </div>
+
+          <div class="field">
+            <label for="email">E-mail <span class="required">(obrigatório)</span></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              inputmode="email"
+              required
+              aria-describedby="ajuda-email erro-email"
+            />
+            <small id="ajuda-email" class="hint">Exemplo: nome@empresa.com</small>
+            <div id="erro-email" class="error" aria-live="polite"></div>
+          </div>
+
+          <div class="field">
+            <label for="telefone">Telefone</label>
+            <input
+              type="tel"
+              id="telefone"
+              name="telefone"
+              autocomplete="tel"
+              inputmode="tel"
+              aria-describedby="ajuda-telefone"
+            />
+            <small id="ajuda-telefone" class="hint">Inclua DDD. Exemplo: (11) 99999-9999</small>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Detalhes da solicitação</legend>
+
+          <div class="field">
+            <label for="assunto">Assunto <span class="required">(obrigatório)</span></label>
+            <select
+              id="assunto"
+              name="assunto"
+              required
+              aria-describedby="ajuda-assunto erro-assunto"
+            >
+              <option value="">Selecione uma opção</option>
+              <option value="duvida">Dúvida</option>
+              <option value="orcamento">Orçamento</option>
+              <option value="suporte">Suporte</option>
+            </select>
+            <small id="ajuda-assunto" class="hint">Escolha o motivo principal do contato.</small>
+            <div id="erro-assunto" class="error" aria-live="polite"></div>
+          </div>
+
+          <div class="field">
+            <label for="mensagem">Mensagem <span class="required">(obrigatório)</span></label>
+            <textarea
+              id="mensagem"
+              name="mensagem"
+              required
+              aria-describedby="ajuda-mensagem erro-mensagem"
+            ></textarea>
+            <small id="ajuda-mensagem" class="hint">
+              Descreva sua solicitação de forma clara.
+            </small>
+            <div id="erro-mensagem" class="error" aria-live="polite"></div>
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <div class="checkbox-group">
+            <input
+              type="checkbox"
+              id="aceite"
+              name="aceite"
+              required
+              aria-describedby="erro-aceite"
+            />
+            <label for="aceite">
+              Confirmo que li as informações e concordo com o envio dos dados
+              <span class="required">(obrigatório)</span>
+            </label>
+          </div>
+          <div id="erro-aceite" class="error" aria-live="polite"></div>
+        </div>
+
+        <div class="actions">
+          <button type="submit">Enviar formulário</button>
+          <button type="reset">Limpar campos</button>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+<script src="javascript.js"></script>
+</html>

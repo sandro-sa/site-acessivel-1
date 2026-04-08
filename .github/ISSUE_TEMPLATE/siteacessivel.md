@@ -8,7 +8,7 @@ labels: enhancement
 ## 🎯 Objetivo
 Cria site acessível
 
-## link para o projeto
+## link para o projeto no git pages
 
 ##  Nome Completo
 

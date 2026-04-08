@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exemplos Acessíveis: Formulário e Tabela</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
  <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -8,6 +19,29 @@
 </head>
 <body>
 
+<header>
+  <nav aria-label="Menu principal" class="menu">
+    <div class="menu-container">
+      <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+      <a href="index.html" class="logo">Minha Aplicação</a>
+
+
+      <ul id="menu-lista" class="menu-lista">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="form.html">Formulário</a></li>
+        <li><a href="tabela.html">Tabela</a></li>
+      </ul>
+        <button
+        class="menu-toggle"
+        aria-expanded="false"
+        aria-controls="menu-lista"
+      >
+        Menu
+      </button>
+    </div>
+  </nav>
+</header>
+  
 
   <main id="conteudo-principal" class="container">
     <h1>Exemplos de tabela acessível</h1>
@@ -59,4 +93,62 @@
     </section>
   </main>
 </body>
+</html>
+
+
+  <main id="conteudo-principal" class="container">
+    <h1>Exemplos de tabela acessível</h1>
+    <p>
+      Esta página apresenta uma tabela construídos com foco em semântica,
+      clareza estrutural, navegação por teclado e leitura adequada por tecnologias assistivas.
+    </p>
+    <section aria-labelledby="titulo-tabela">
+      <h2 id="titulo-tabela">Tabela de preços acessível</h2>
+      <!-- Descrição adicional para leitores de tela -->
+      <p id="descricao-tabela" class="sr-only">
+        Tabela com preços de pratos, contendo valores para porção individual e dupla.
+      </p>
+
+     <table aria-describedby="descricao-tabela">
+  <caption>
+    Tabela de preços de pratos com opções de porção individual e dupla.
+  </caption>
+
+  <thead>
+    <tr>
+      <th scope="col">Nome do prato</th>
+      <th scope="col">Valor individual</th>
+      <th scope="col">Valor duplo</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <th scope="row">Yakisoba</th>
+      <td>R$ 11,00</td>
+      <td>R$ 20,00</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Yakimeshi</th>
+      <td>R$ 10,00</td>
+      <td>R$ 18,00</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Yaki bifum</th>
+      <td>R$ 18,00</td>
+      <td>R$ 35,00</td>
+    </tr>
+  </tbody>
+</table>
+
+      <p class="hint" role="note">
+        Esta tabela é usada para dados, não para layout. Os cabeçalhos ajudam o leitor de tela
+        a relacionar cada valor ao contexto correto. :contentReference[oaicite:2]{index=2}
+      </p>
+    </section>
+  </main>
+</body>
+
 </html>
